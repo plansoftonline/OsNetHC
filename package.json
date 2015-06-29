@@ -1,0 +1,31 @@
+{
+  "name": "osnethc",
+  "version": "0.0.1",
+  "description": "Sistema de Gestão de Chamados",
+  "main": "index.js",
+  "scripts": {
+    "test": "grunt test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/plansoftonline/OsNetHC.git"
+  },
+  "keywords": [
+    "SLA",
+    "Chamados",
+    "Helpdesk"
+  ],
+  "author": "André Gustavo, Filipe Aguiar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/plansoftonline/OsNetHC/issues"
+  },
+  "homepage": "https://github.com/plansoftonline/OsNetHC#readme",
+  "devDependencies": {
+    "bower": "^1.4.1",
+    "grunt": "^0.4.5",
+    "grunt-cli": "^0.1.13",
+    "grunt-contrib-uglify": "^0.9.1",
+    "grunt-contrib-watch": "^0.6.1"
+  }
+}
