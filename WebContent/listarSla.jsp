@@ -47,9 +47,7 @@
 			       <th>Descrição</th>
 			       <th>Tempo (min)</th>
 			       <th>Criado em</th>
-			       
 			   </tr>
-		
 			   <c:forEach items="${lista}" var="sla">
 
 			   		<tr>
