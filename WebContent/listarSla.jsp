@@ -40,7 +40,7 @@
 
 	   <div id="boxmodel2">
 		   <table border="1" cellpadding="1" cellspacing="1" class="tabela" width="90%">
-			   <caption>Tabela de Sla</caption>
+			   <caption>Tabela de Slas</caption>
 			   <tr>
 			   	   <th colspan="2">Opções</th>
 			   	   <th>Código</th>
