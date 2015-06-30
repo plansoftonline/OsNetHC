@@ -1,0 +1,23 @@
+{
+  "name": "OsNetHC",
+  "version": "0.0.1",
+  "homepage": "https://github.com/plansoftonline/OsNetHC",
+  "description": "Sistema de gerenciamento de OS",
+  "keywords": [
+    "SLA",
+    "Chamados",
+    "Helpdesk"
+  ],
+  "authors": [
+    "André Gustavo",
+    "Filipe Aguiar"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

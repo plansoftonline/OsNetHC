@@ -1,47 +1,73 @@
-module.exports = function(grunt) {
-// Load Grunt tasks declared in the package.json file
-require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
+'use strict';
 
-// Configure Grunt
-grunt.initConfig({
+module.exports = function (grunt) {
 
-// Grunt express - our webserver
-// https://github.com/blai/grunt-express
-express: {
-    all: {
+  var config = {
+    app: 'WebContent/app',
+    dist: 'WebContent'
+  };
+
+  grunt.initConfig({
+    config: config,
+    watch: {
+      bower: {
+        files: ['bower.json'],
+        tasks: ['wiredep']
+      },
+      js: {
+        files: ['<%= config.app %>/js/{,*/}*.js']
+      },
+      gruntfile: {
+        files: ['Gruntfile.js']
+      },
+      styles: {
+        files: ['<%= config.app %>/css/{,*/}*.css']
+      }
+    },
+
+    browserSync: {
+      options: {
+        notify: false,
+        background: true
+      },
+      livereload: {
         options: {
-            bases: ['client'],
-            port: 8080,
-            hostname: "0.0.0.0",
-            livereload: true
+          files: [
+            '<%= config.app %>/{,*/}*.html',
+            '.tmp/css/{,*/}*.css',
+            '<%= config.app %>/images/{,*/}*',
+            '<%= config.app %>/js/{,*/}*.js'
+          ],
+          port: 9000,
+          server: {
+            baseDir: [config.app]
+          }
         }
-    }
-},
+      }
+    },
 
-// grunt-watch will monitor the projects files
-// https://github.com/gruntjs/grunt-contrib-watch
-watch: {
-    all: {
-            files: '**/*.html',
-            options: {
-                livereload: true
-        }
+    wiredep: {
+      app: {
+        src: ['<%= config.app %>/index.html'],
+        ignorePath: /^<%= config.app %>\/|\.\.\//
+      }
     }
-},
+  });
 
-// grunt-open will open your browser at the project's URL
-// https://www.npmjs.org/package/grunt-open
-open: {
-    all: {
-        path: 'http://localhost:8080/index.html'
-    }
-}
-});
+  grunt.registerTask('serve', 'Inicia o servidor', function (target) {
 
-// Creates the `server` task
-grunt.registerTask('server', [
-    'express',
-    'open',
-    'watch'
+    grunt.task.run([
+      'wiredep',
+      'browserSync:livereload',
+      'watch'
     ]);
+  });
+
+  grunt.registerTask('default', [
+    'serve'
+  ]);
+
+  grunt.loadNpmTasks('grunt-wiredep');
+  grunt.loadNpmTasks('grunt-browser-sync');
+  grunt.loadNpmTasks('grunt-contrib-watch');
 };
