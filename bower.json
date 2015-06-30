@@ -12,6 +12,15 @@
     "André Gustavo",
     "Filipe Aguiar"
   ],
+  "overrides":{
+    "bootstrap" : {
+         "main": [
+            "less/bootstrap.less",
+            "dist/css/bootstrap.css",
+            "dist/js/bootstrap.js"
+          ]
+    }
+  },
   "license": "MIT",
   "ignore": [
     "**/.*",
@@ -19,5 +28,10 @@
     "bower_components",
     "test",
     "tests"
-  ]
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.5",
+    "metisMenu": "~2.0.2",
+    "font-awesome": "~4.3.0"
+  }
 }

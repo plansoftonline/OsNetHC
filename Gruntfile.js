@@ -45,8 +45,7 @@ module.exports = function (grunt) {
         }
       }
     },
-
-    wiredep: {
+  wiredep: {
       app: {
         src: ['<%= config.app %>/index.html'],
         ignorePath: /^<%= config.app %>\/|\.\.\//
