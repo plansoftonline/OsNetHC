@@ -21,7 +21,7 @@ module.exports = function (grunt) {
         files: ['Gruntfile.js']
       },
       styles: {
-        files: ['<%= config.app %>/css/{,*/}*.css']
+        files: ['<%= config.app %>/styles/{,*/}*.css']
       }
     },
 
@@ -34,8 +34,9 @@ module.exports = function (grunt) {
         options: {
           files: [
             '<%= config.app %>/{,*/}*.html',
-            '.tmp/css/{,*/}*.css',
+            '.tmp/styles/{,*/}*.css',
             '<%= config.app %>/images/{,*/}*',
+            '<%= config.app %>/styles/{,*/}*.css',
             '<%= config.app %>/js/{,*/}*.js'
           ],
           port: 9000,

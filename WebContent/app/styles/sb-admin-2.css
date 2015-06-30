@@ -364,3 +364,7 @@ table.dataTable thead .sorting:after {
 .sidebar-nav a:hover, .navbar-top-links a:hover {
   color: #404040;
 }
+
+.panel-spaced {
+  margin-top: 30px;
+}
