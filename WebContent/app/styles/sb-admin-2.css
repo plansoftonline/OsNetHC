@@ -375,3 +375,7 @@ td.btn-td {
 td.td-small {
   width: 7%
 }
+
+.centered {
+  text-align: center;
+}
