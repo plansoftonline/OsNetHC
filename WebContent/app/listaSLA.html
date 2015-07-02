@@ -34,7 +34,7 @@
   <div id="wrapper">
 
     <!-- Navigation -->
-    <nav class="navbar navbar-default navbar-fixed-top" role="navigation" style="margin-bottom: 0">
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation" style="margin-bottom: 0">
       <div class="navbar-header">
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
           <span class="sr-only">Toggle navigation</span>
@@ -345,43 +345,45 @@
                     <hr>
 
                     <div id="boxmodel2">
-                      <table class="tabela table table-striped">
-                        <caption>Tabela de Slas</caption>
-                        <tr>
-                          <th colspan="2">Opções</th>
-                          <th>Código</th>
-                          <th>Descrição</th>
-                          <th>Tempo (min)</th>
-                          <th>Criado em</th>
-                        </tr>
-                        <c:forEach items="${lista}" var="sla">
+                      <div class="table-responsive">
+                        <table class="tabela table table-striped">
+                          <caption>Tabela de Slas</caption>
                           <tr>
-                            <td width="2%">
-                              <a href="altSla?id=${sla.codigo}&descricao=${sla.descricao}&tempo=${sla.tempo}&data=${sla.criado_em}" class="btn btn-default">
-                                <i class="fa fa-edit fa-fw"></i>Alterar
-                              </a>
-                            </td>
-                            <td width="2%">
-                              <a href="excluiSla?id=${sla.codigo}" onclick="if (!confirm('Confirma a exclusão desse Sla?')) return false" class="btn btn-default">
-                                <i class="fa fa-remove fa-fw"></i>Excluir
-                              </a>
-                            </td>
-
-                            <td width="5%">
-                              ${sla.codigo}
-                            </td>
-                            <td width="30%">
-                              ${sla.descricao}
-                            </td>
-                            <td width="15%">
-                              ${sla.tempo}
-                            </td>
-                            <td width="10%">
-                              ${sla.criado_em}
-                            </td>
+                            <th colspan="2">Opções</th>
+                            <th>Código</th>
+                            <th>Descrição</th>
+                            <th>Tempo (min)</th>
+                            <th>Criado em</th>
                           </tr>
-                        </c:forEach>
-                      </table>
+                          <c:forEach items="${lista}" var="sla">
+                            <tr>
+                              <td class="btn-td">
+                                <a href="altSla?id=${sla.codigo}&descricao=${sla.descricao}&tempo=${sla.tempo}&data=${sla.criado_em}" class="btn btn-default">
+                                  <i class="fa fa-edit fa-fw"></i><span class="hidden-xs">Alterar</span>
+                                </a>
+                              </td>
+                              <td class="btn-td">
+                                <a href="excluiSla?id=${sla.codigo}" onclick="if (!confirm('Confirma a exclusão desse Sla?')) return false" class="btn btn-default">
+                                  <i class="fa fa-remove fa-fw"></i><span class="hidden-xs">Excluir</span>
+                                </a>
+                              </td>
+
+                              <td class="td-small">
+                                ${sla.codigo}
+                              </td>
+                              <td>
+                                ${sla.descricao}
+                              </td>
+                              <td class="td-small">
+                                ${sla.tempo}
+                              </td>
+                              <td class="td-small">
+                                ${sla.criado_em}
+                              </td>
+                            </tr>
+                          </c:forEach>
+                        </table>
+                      </div>
                       <div class="center-block centered">
                         <nav>
                           <ul class="pagination">
