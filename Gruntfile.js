@@ -51,8 +51,23 @@ module.exports = function (grunt) {
         src: ['<%= config.app %>/index.html'],
         ignorePath: /^<%= config.app %>\/|\.\.\//
       }
+    },
+
+    uglify: {
+      options: {
+        mangle: false,
+        bautify: true
+      },
+      my_target: {
+        files: [{
+          expand: true,
+          cwd: '<%= config.app %>/js',
+          src: '**/*.js',
+          dest: '<%= config.dist %>/js'
+        }]
+      }
     }
-  });
+  }); //initConfig
 
   grunt.registerTask('serve', 'Inicia o servidor', function (target) {
 
@@ -67,7 +82,10 @@ module.exports = function (grunt) {
     'serve'
   ]);
 
+  grunt.registerTask('build', ['uglify']);
+
   grunt.loadNpmTasks('grunt-wiredep');
   grunt.loadNpmTasks('grunt-browser-sync');
   grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-contrib-uglify');
 };
