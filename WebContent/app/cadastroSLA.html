@@ -49,7 +49,7 @@
       <ul class="nav navbar-top-links navbar-right">
         <li class="dropdown">
           <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-            <i class="fa fa-envelope fa-fw"></i>  <i class="fa fa-caret-down"></i>
+            <i class="fa fa-envelope fa-fw"></i> <i class="fa fa-caret-down"></i>
           </a>
           <ul class="dropdown-menu dropdown-messages">
             <li>
@@ -100,7 +100,7 @@
         <!-- /.dropdown -->
         <li class="dropdown">
           <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-            <i class="fa fa-tasks fa-fw"></i>  <i class="fa fa-caret-down"></i>
+            <i class="fa fa-tasks fa-fw"></i> <i class="fa fa-caret-down"></i>
           </a>
           <ul class="dropdown-menu dropdown-tasks">
             <li>
@@ -179,7 +179,7 @@
         <!-- /.dropdown -->
         <li class="dropdown">
           <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-            <i class="fa fa-bell fa-fw"></i>  <i class="fa fa-caret-down"></i>
+            <i class="fa fa-bell fa-fw"></i> <i class="fa fa-caret-down"></i>
           </a>
           <ul class="dropdown-menu dropdown-alerts">
             <li>
@@ -239,7 +239,7 @@
         <!-- /.dropdown -->
         <li class="dropdown">
           <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-            <i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
+            <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
           </a>
           <ul class="dropdown-menu dropdown-user">
             <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
@@ -278,7 +278,7 @@
                   <a href="#"><i class="fa fa-magic fa-fw"></i> Soluções</a>
                 </li>
                 <li>
-                  <a href="#"><i class="fa fa-calendar fa-fw"></i> SLA</a>
+                  <a href="listaSLA.html"><i class="fa fa-calendar fa-fw"></i> SLA</a>
                 </li>
               </ul>
             </li>
@@ -324,38 +324,44 @@
       <div class="container-fluid">
         <div class="row">
           <div class="col-lg-12">
-            <div class="panel panel-default panel-spaced" id="boxmodel2">
+            <div class="panel panel-default panel-spaced">
               <div class="panel-heading">
                 Cadastrar SLA
               </div>
               <div class="panel-body">
-                <form action="ServletCadSla" method="post">
-                  <div class="alert alert-danger">${msgErro != null ? msgErro : '' }</div>
-                  <div class="form-group">
-                    <label for="txtCodigo">Código:</label>
-                    <input type="text" name="txtCodigo" size="5" value="${ (empty txtCodigo) ? null : txtCodigo }" class="form-control">
-                  </div>
-                  <div class="form-group">
-                    <label for="txtDescricao">Descrição:</label>
-                    <input type="text" name="txtDescricao" size="100" maxlength="100" value="${txtDescricao}" class="form-control">
-                  </div>
-                  <div class="form-group">
-                    <label for="txtTempo">Tempo (min):</label>
-                    <input type="text" name="txtTempo" size="20" maxlength="14" value="${txtTempo}" class="form-control">
-                  </div>
-                  <div class="form-group">
-                    <label for="txtData">Criado em:</label>
-                    <input type="text" name="txtData" size="10" maxlength="10" value="${txtData}"
-                    title="Campo no formato dd/mm/yyyy" class="form-control">
-                  </div>
-                </div><!-- panel-body -->
-                <div class="panel-footer">
-                    <div class="btn-group" role="toolbar">
-                      <button type="submit" name="txtConfirma" value="Gravar" role="group" class="btn btn-default"><i class="fa fa-save fa-fw"></i>Gravar</button>
-                      <button type="reset" name="txtLimpa" value="Limpar" role="group" class="btn btn-default"><i class="fa fa-eraser fa-fw"></i>Limpar</button>
+                <div id="boxmodel2">
+                  <form action="ServletCadSla" method="post">
+                    <div class="alert alert-danger">${msgErro != null ? msgErro : '' }</div>
+                    <div class="form-group">
+                      <label for="txtCodigo">Código:</label>
+                      <input type="text" name="txtCodigo" size="5" value="${ (empty txtCodigo) ? null : txtCodigo }" class="form-control">
                     </div>
+                    <div class="form-group">
+                      <label for="txtDescricao">Descrição:</label>
+                      <input type="text" name="txtDescricao" size="100" maxlength="100" value="${txtDescricao}" class="form-control">
+                    </div>
+                    <div class="form-group">
+                      <label for="txtTempo">Tempo (min):</label>
+                      <input type="text" name="txtTempo" size="20" maxlength="14" value="${txtTempo}" class="form-control">
+                    </div>
+                    <div class="form-group">
+                      <label for="txtData">Criado em:</label>
+                      <input type="text" name="txtData" size="10" maxlength="10" value="${txtData}" title="Campo no formato dd/mm/yyyy" class="form-control">
+                      <hr>
+                    </div>
+                    <div class="center-block centered">
+                      <div class="btn-group" role="toolbar">
+                        <button type="submit" name="txtConfirma" value="Gravar" role="group" class="btn btn-default">
+                          <i class="fa fa-save fa-fw"></i>Gravar
+                        </button>
+                        <button type="reset" name="txtLimpa" value="Limpar" role="group" class="btn btn-default">
+                          <i class="fa fa-eraser fa-fw"></i>Limpar
+                        </button>
+                      </div>
+                    </div>
+                  </form>
                 </div>
-              </form>
+              </div>
             </div>
           </div>
           <!-- /.col-lg-12 -->
